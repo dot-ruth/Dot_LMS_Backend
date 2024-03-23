@@ -1,0 +1,8 @@
+172.18.0.1 - - [23/Mar/2024:09:24:00 +0000] "GET / HTTP/1.1" 200 1024521 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [23/Mar/2024:09:24:02 +0000] "GET /favicon.ico HTTP/1.1" 200 0 "http://127.0.0.1:8080/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [23/Mar/2024:09:25:55 +0000] "GET / HTTP/1.1" 200 1025374 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [23/Mar/2024:09:35:26 +0000] "GET / HTTP/1.1" 200 6627 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [23/Mar/2024:09:36:09 +0000] "GET /api/documentation HTTP/1.1" 200 2109 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [23/Mar/2024:09:37:51 +0000] "GET /api/documentation HTTP/1.1" 200 2109 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [23/Mar/2024:09:56:56 +0000] "GET /api/documentation HTTP/1.1" 200 2109 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" "-"
+172.18.0.1 - - [23/Mar/2024:09:57:44 +0000] "GET /api/documentation HTTP/1.1" 200 2109 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" "-"
