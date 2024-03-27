@@ -6,9 +6,11 @@ services:
       dockerfile: docker/Nginx/Dockerfile
     ports: 
       - "8080:80"
+      - "443:443"
     networks:
-      - internal
+      - dot-lms-backend
     volumes:
+      - .certs:/etc/nginx/certs
       - ./:/var/www/html/
       - ./logs/nginx:/var/log/nginx/
     container_name: nginx
@@ -17,7 +19,7 @@ services:
       context: .
       dockerfile: docker/PHP/Dockerfile
     networks:
-      - internal
+      - dot-lms-backend
     volumes:
       - ./:/var/www/html/
       - ./logs/php.log:/var/log/fpm-php.www.log
@@ -27,18 +29,18 @@ services:
   mysql:
     container_name: db
     restart: always
-    image: mysql:latest
+    image: mysql:8.3.0
     ports:
      - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: ''
       MYSQL_USER: 'root'
-      MYSQL_PASS: 'password'
+      MYSQL_PASS: ''
       MYSQL_DATABASE: 'dot_lms'
     volumes:
       - ./db-data:/var/lib/mysql
     networks:
-      - internal
+      - dot-lms-backend
 networks:
-  internal:
+  dot-lms-backend:
     driver: bridge
