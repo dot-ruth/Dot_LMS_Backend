@@ -1,0 +1,46 @@
+version: "3"
+services:
+  nginx:
+    build:
+      context: ./
+      dockerfile: docker/Nginx/Dockerfile
+    ports: 
+      - "8080:80"
+      - "443:443"
+    networks:
+      - dot-lms-backend
+    volumes:
+      - .certs:/etc/nginx/certs
+      - ./:/var/www/html/
+      - ./logs/nginx:/var/log/nginx/
+    container_name: nginx
+  php:
+    build:
+      context: .
+      dockerfile: docker/PHP/Dockerfile
+    networks:
+      - dot-lms-backend
+    volumes:
+      - ./:/var/www/html/
+      - ./logs/php.log:/var/log/fpm-php.www.log
+    container_name: php
+    expose:
+      - "9000"
+  mysql:
+    container_name: db
+    restart: always
+    image: mysql:8.3.0
+    ports:
+     - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASS: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+    volumes:
+      - ./db-data:/var/lib/mysql
+    networks:
+      - dot-lms-backend
+networks:
+  dot-lms-backend:
+    driver: bridge
