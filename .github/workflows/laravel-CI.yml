@@ -1,0 +1,19 @@
+name: Laravel CI
+
+on:
+  push:
+    branches:
+      - release/1.0
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Build 
+        run: |
+          docker-compose -f ././docker-compose.yml up --build 
